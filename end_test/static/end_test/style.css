@@ -1,0 +1,22 @@
+body{
+	background: linear-gradient(to bottom, #9add15 0%, #00cc00 98%);
+}
+
+h1 {
+	margin: 1em;
+}
+
+#form{
+	padding: 1em 1em 1em 5em
+}
+
+#questions {
+	margin: 2em 4em 3em 0em;
+    background: #d3d3c8;
+    padding: 1em 1em 2em 2em;
+
+}
+
+.names {
+	padding-right: 80%;
+}
