@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
+<html>
 {% csrf_token %}
 {% load static %}
-<html>
+{% load end_test_extras %}
 	<head>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -19,41 +20,31 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		
 		<link rel="stylesheet" type="text/css" href="{% static 'end_test/style.css' %}">
+	
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-	
 	</head>
 	{% autoescape off %}
 	<body>
 		<div id="frame">
-			<h1>Nature Med Tech</h1>
+			<h1>Vielen Dank für Ihre Teilnahme!</h1>
 			<img src={% static 'end_test/nmt_logo.jpg' %} width="400" id="logo">
-			<form id="form" action="/check_test" method="post">
-				{% csrf_token %}
-				<div class="names">
-					<div class="form-group">
-		  				<label for="usr">Vorname:</label>
-		  				<input type="text" class="form-control" name="firstname" id="usr">
-					</div>
-					<div class="form-group">
-		  				<label for="usr">Nachname:</label>
-		  				<input type="text" class="form-control" name="lastname" id="usr">
-					</div>
-				</div>
-				{% for key, value in questions.items %}			
-					<div id=questions>
-					<h5>{{ key }}</h5>
-						{% for answer in value %}
-							<div class="form-check">
-								<label class="form-check-label"><input type="radio" name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">{{ answer }}</label>
-							</div>
-						{% endfor %}
-					</div>
-					{% endfor %} 
-				
-				<input type="submit" class="btn btn-danger" value="Fertig!">
-			</form>
+			<div id=resultlist>
+				<h3>Ergebnisse:</h3>
+					{% for key, value in questions.items %}			
+						<div id=results>
+						<h5>{{ key }}</h5>	
+							{% for answer in value %}
+								{% with result=results|index:forloop.parentloop.counter0 %}
+								<div class="form-check">
+									<label class="form-check-label"><p id='answer' name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" style="background: {{ result|index:forloop.counter0  }}">{{ answer }}</label>
+								</div>
+								{% endwith %}
+							{% endfor %}
+						</div>
+						{% endfor %} 
+			</div>
 		</div>
 	</body>
 	{% endautoescape %}

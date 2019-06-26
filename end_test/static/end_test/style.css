@@ -1,9 +1,14 @@
 body{
-	background: linear-gradient(to bottom, #9add15 0%, #00cc00 98%);
+	background: #F0F7D4;
+	font-family: 'Muli', sans-serif;
 }
 
 h1 {
 	margin: 1em;
+}
+
+h5{
+	margin-bottom: 1em;
 }
 
 #form{
@@ -12,11 +17,45 @@ h1 {
 
 #questions {
 	margin: 2em 4em 3em 0em;
-    background: #d3d3c8;
-    padding: 1em 1em 2em 2em;
+	/*background: #d3d3c8;*/
+	background: #C3D581;
+    padding: 1em 1em 1em 2em;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px grey;
 
 }
 
 .names {
 	padding-right: 80%;
+}
+
+
+
+.form-check{
+	margin-bottom: 1em;
+}
+
+#logo{
+	float:right;
+	margin: -5em 5em 0em 0em;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+#frame{
+	width: 80%
+}
+
+#resultlist {
+	padding: 10em 1em 1em 5em
+}
+
+#results {
+	margin: 2em 4em 3em 0em;
+	/*background: #d3d3c8;*/
+	background: #C3D581;
+    padding: 1em 1em 2em 2em;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px grey;
+
 }
