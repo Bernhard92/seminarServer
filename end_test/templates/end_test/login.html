@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% csrf_token %}
+{% load static %}
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		
+		<link rel="stylesheet" type="text/css" href="{% static 'end_test/style.css' %}">
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+	
+	</head>
+	<body>
+		<div id="frame">
+			<img src={% static 'end_test/nmt_logo.jpg' %} width="430" id="login_logo">
+			<form id="login_form" action="/start_test" method="post">
+				{% csrf_token %}
+				<div id="login_panel">
+					<div class"input_fields">
+						<div class="names">
+							<div class="form-group">
+				  				<label for="usr"><h5>Vorname:</h5></label>
+				  				<input type="text" class="form-control" name="firstname" id="usr" required maxlength="30">
+							</div>
+							<div id="nname" class="form-group">
+				  				<label for="usr"><h5>Nachname:</h5></label>
+				  				<input type="text" class="form-control" name="lastname" id="usr" required maxlength="30">
+						</div>
+					</div>
+				</div>
+				<input id="start_button" type="submit" class="btn btn-danger" value="Weiter">
+			</form>
+		</div>
+	</body>
+</html>

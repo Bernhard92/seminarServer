@@ -29,21 +29,28 @@
 	<body>
 		<div id="frame">
 			<h1>Vielen Dank für Ihre Teilnahme!</h1>
+
 			<img src={% static 'end_test/nmt_logo.jpg' %} width="400" id="logo">
+
+
 			<div id=resultlist>
+				<h5>Sie haben {{ number_correct_answers }} von 10 Fragen richtig beantwortet</h5>
 				<h3>Ergebnisse:</h3>
-					{% for key, value in questions.items %}			
-						<div id=results>
+				{% for key, value in questions.items %}			
+					<div id=results>
 						<h5>{{ key }}</h5>	
-							{% for answer in value %}
-								{% with result=results|index:forloop.parentloop.counter0 %}
-								<div class="form-check">
-									<label class="form-check-label"><p id='answer' name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" style="background: {{ result|index:forloop.counter0  }}">{{ answer }}</label>
-								</div>
-								{% endwith %}
-							{% endfor %}
-						</div>
-						{% endfor %} 
+						{% for answer in value %}
+							{% with result=results|index:forloop.parentloop.counter0 %}
+							<div class="form-check">
+								<label class="form-check-label"><p id='answer' name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" style="background: {{ result|index:forloop.counter0  }}">{{ answer }}</label>
+							</div>
+							{% endwith %}
+						{% endfor %}
+					</div>
+					{% endfor %} 
+
+					<form id="res_form" action="index" method="get"><input id="start_button" type="submit" class="btn btn-danger" value="Beenden"></form>
+
 			</div>
 		</div>
 	</body>

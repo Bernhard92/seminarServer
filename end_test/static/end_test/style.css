@@ -12,7 +12,8 @@ h5{
 }
 
 #form{
-	padding: 1em 1em 1em 5em
+	padding: 10em 1em 1em 5em
+
 }
 
 #questions {
@@ -26,7 +27,7 @@ h5{
 }
 
 .names {
-	padding-right: 80%;
+	/*padding-right: 80%;*/
 }
 
 
@@ -58,4 +59,47 @@ h5{
     border-radius: 10px;
     box-shadow: 10px 10px 5px grey;
 
+}
+
+#answer{
+	cursor: pointer;
+}
+
+#login_panel{
+	margin: 2em 0em 0em 11em;
+
+	background: #d3d3c8;
+
+	background: #C3D581;
+
+	padding: 4em 5em 3em 4em;
+
+	border-radius: 10px;
+
+	box-shadow: 10px 10px 5px grey;
+	}
+
+#start_button{
+	margin-top: 2em;
+}
+
+#login_form{
+	padding: 0em 0em 1em 5em;
+}
+
+#login_logo{
+	margin: 7em 0em 0em 16em;
+
+	border-radius: 10px;
+
+
+	box-shadow: 5px 5px 5px grey;
+}
+
+#nname{
+	margin-top: 3em
+}
+
+#res_form{
+	margin: -2em 0em 9em 0em;
 }

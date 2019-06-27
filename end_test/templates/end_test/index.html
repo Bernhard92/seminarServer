@@ -31,6 +31,7 @@
 			<img src={% static 'end_test/nmt_logo.jpg' %} width="400" id="logo">
 			<form id="form" action="/check_test" method="post">
 				{% csrf_token %}
+				<!--
 				<div class="names">
 					<div class="form-group">
 		  				<label for="usr">Vorname:</label>
@@ -41,12 +42,13 @@
 		  				<input type="text" class="form-control" name="lastname" id="usr">
 					</div>
 				</div>
+					-->
 				{% for key, value in questions.items %}			
 					<div id=questions>
 					<h5>{{ key }}</h5>
 						{% for answer in value %}
 							<div class="form-check">
-								<label class="form-check-label"><input type="radio" name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">{{ answer }}</label>
+								<label id="answer" class="form-check-label"><input id="answer" type="radio" name="question{{ forloop.parentloop.counter }}" class="form-check-input" value="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">{{ answer }}</label>
 							</div>
 						{% endfor %}
 					</div>
